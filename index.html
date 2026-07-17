@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Waste Segregation System</title>
+
+    <link rel="stylesheet" href="style.css">
+ </head>  
+<body>
+
+<div class="container">
+
+    <div class="hero">
+
+    <div>
+
+        <h1>
+            🌍 EcoVision AI
+        </h1>
+
+        <p class="subtitle">
+            AI Powered Waste Classification using
+            TensorFlow.js & Deep Learning
+        </p>
+
+    </div>
+
+
+</div>
+
+    <p class="subtitle">
+        Upload an image or use your webcam to classify waste.
+    </p>
+
+    <!-- Buttons -->
+    <div class="top-buttons">
+
+        <button id="uploadTab" class="active">
+            📁 Upload Image
+        </button>
+
+        <button id="cameraTab">
+            📷 Live Camera
+        </button>
+
+    </div>
+
+    <!-- Upload Section -->
+    <div id="uploadSection" class="section">
+
+        <input
+            type="file"
+            id="imageUpload"
+            accept="image/*">
+
+        <div class="preview-box">
+
+            <img
+                id="preview"
+                src=""
+                alt="Image Preview">
+
+        </div>
+
+    </div>
+
+    <!-- Webcam Section -->
+    <div id="cameraSection" class="section" style="display:none;">
+
+        <video
+            id="webcam"
+            autoplay
+            playsinline
+            width="350"
+            height="300">
+        </video>
+
+        <br>
+
+        <button id="startCamera">
+            ▶ Start Camera
+        </button>
+
+        <button id="stopCamera">
+            ⏹ Stop Camera
+        </button>
+
+    </div>
+
+    <!-- Predict -->
+    <button id="predictBtn" class="predict-btn">
+
+        🔍 Predict Waste
+
+    </button>
+
+    <!-- Loading -->
+    <div id="loading" style="display:none;">
+
+        Predicting...
+
+    </div>
+
+    <!-- Result Card -->
+    <div class="resultCard">
+
+        <h2>Prediction</h2>
+
+        <div id="prediction">
+
+            Waiting for prediction...
+
+        </div>
+
+        <h3>Confidence</h3>
+
+        <div id="confidence">
+
+        </div>
+
+        <div id="binRecommendation">
+
+        </div>
+
+    </div>
+
+</div>
+<!-- TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+
+<!-- Teachable Machine -->
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+<!-- Your Script -->
+<script src="script.js"></script>
+
+</body>
+
+</html>
